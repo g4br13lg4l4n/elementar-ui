@@ -15,7 +15,6 @@ export class CardOverlayContainerDirective implements OnInit {
   ngOnInit() {
     const nativeElement = this._elementRef.nativeElement as HTMLElement;
     this._renderer.setStyle(nativeElement, 'position', 'relative');
-    this._renderer.setStyle(nativeElement, 'cursor', 'pointer');
     this._renderer.setStyle(nativeElement, 'overflow', 'hidden');
   }
 }

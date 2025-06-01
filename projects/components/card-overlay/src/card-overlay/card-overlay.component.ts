@@ -10,6 +10,7 @@ import { booleanAttribute, Component, input } from '@angular/core';
     'class': 'emr-card-overlay',
     '[class.with-translate]': 'withTranslate()',
     '[class.with-blur]': 'withBlur()',
+    '[class.is-disabled]': 'disabled()',
   }
 })
 export class CardOverlayComponent {
@@ -17,6 +18,9 @@ export class CardOverlayComponent {
     transform: booleanAttribute
   });
   withBlur = input(false, {
+    transform: booleanAttribute
+  });
+  disabled = input(false, {
     transform: booleanAttribute
   });
 }

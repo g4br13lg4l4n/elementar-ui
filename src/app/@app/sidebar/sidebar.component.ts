@@ -220,7 +220,7 @@ export class SidebarComponent implements OnInit {
       type: 'group',
       icon: 'grid_view',
       name: 'Components',
-      badge: 64,
+      badge: 65,
       children: [
         {
           key: uuid(),
@@ -605,6 +605,12 @@ export class SidebarComponent implements OnInit {
           type: 'link',
           name: 'Notifications',
           link: '/components/notifications'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Block Loader',
+          link: '/components/block-loader'
         },
       ]
     },

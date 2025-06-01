@@ -261,6 +261,10 @@ const routes: Routes = [
   {
     path: 'notifications',
     loadChildren: () => import('./notifications/notifications.module').then(m => m.NotificationsModule)
+  },
+  {
+    path: 'block-loader',
+    loadChildren: () => import('./block-loader/block-loader.module').then(m => m.BlockLoaderModule)
   }
 ];
 

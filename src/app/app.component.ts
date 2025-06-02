@@ -3,8 +3,7 @@ import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router
 import { filter } from 'rxjs';
 import { PageLoadingBarComponent } from '@elementar-ui/components/page-loading-bar';
 import {
-  AnalyticsService, EnvironmentService,
-  SeoService, SoundEffectDirective,
+  SoundEffectDirective,
   ThemeManagerService
 } from '@elementar-ui/components/core';
 import { AnnouncementGlobalComponent } from '@elementar-ui/components/announcement';
@@ -15,7 +14,7 @@ import {
   LayoutSidebarComponent, LayoutTopbarComponent
 } from '@elementar-ui/components/layout';
 import { SidebarComponent } from '@app/sidebar/sidebar.component';
-import { MatAnchor, MatIconButton } from '@angular/material/button';
+import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatTooltip } from '@angular/material/tooltip';
 import { LogoComponent, TextLogoComponent } from '@elementar-ui/components/logo';
@@ -34,23 +33,19 @@ import { SplashScreenComponent } from '@elementar-ui/components/splash-screen';
     LayoutTopbarComponent,
     SidebarComponent,
     MatIcon,
-    MatAnchor,
     SoundEffectDirective,
     MatTooltip,
     RouterLink,
     MatIconButton,
     LogoComponent,
     SplashScreenComponent,
-    TextLogoComponent
+    TextLogoComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
   protected _themeManager = inject(ThemeManagerService);
-  private _analyticsService = inject(AnalyticsService);
-  private _seoService = inject(SeoService);
-  private _envService = inject(EnvironmentService);
   private _router = inject(Router);
 
   constructor() {
@@ -72,7 +67,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this._themeManager.setColorScheme(this._themeManager.getPreferredColorScheme());
-    this._seoService.trackCanonicalChanges(this._envService.getValue('siteUrl'));
-    this._analyticsService.trackPageViews();
+    
+    /** Track canonical changes for SEO
+     * */
+    //this._seoService.trackCanonicalChanges(this._envService.getValue('siteUrl'));
+    
+    /*
+    * Track page views with Google Analytics
+    * */
+    // this._analyticsService.trackPageViews();
   }
 }

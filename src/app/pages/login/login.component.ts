@@ -2,11 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormField, MatLabel } from '@angular/material/select';
-import { PageComponent } from '@meta/page/page.component';
-import { PlaygroundComponent } from '@meta/playground/playground.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,13 +11,11 @@ import { Router } from '@angular/router';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    PageComponent,
-    MatIcon,
     MatFormField,
     MatLabel,
     MatInputModule,
     FormsModule,
-    MatButton,
+    MatButton
   ],
   providers: [
     

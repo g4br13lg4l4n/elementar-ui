@@ -2,4 +2,10 @@
 <emr-splash-screen>
 	<emr-text-logo>BRAWNIE MANAGER</emr-text-logo>
 </emr-splash-screen>
-<app-login class="flex flex-col items-center justify-center h-screen"/>
+<emr-layout layoutId="root" windowMode>
+	<emr-layout>
+		<emr-layout-body>
+			<router-outlet />
+		</emr-layout-body>
+	</emr-layout>
+</emr-layout>
